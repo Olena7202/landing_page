@@ -1,14 +1,15 @@
 .form {
-  width: 278px;
+  width: 100%;
+  max-width: 278px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   font-family: Poppins, sans-serif;
   border: none;
   margin: 0 auto;
 
   @include on-laptop {
-    width: 411px;
+    max-width: 411px;
   }
 
   @include on-phone {
@@ -30,7 +31,7 @@
     }
 
     &--message {
-      height: 150px;
+      min-height: 140px;
       padding-top: 15px;
     }
 
@@ -47,7 +48,7 @@
     outline: none;
     border: none;
     height: 58px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 30px;
     font-size: 16px;
     font-weight: 700;
@@ -55,6 +56,7 @@
     cursor: pointer;
     background-color: #fff;
     color: #292929;
+    width: 100%;
 
     &::after {
       margin-left: 14px;
@@ -77,6 +79,7 @@
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
+  line-height: 1.5;
 
   &:hover {
     color: #6c63ff;
@@ -85,19 +88,26 @@
 }
 
 .template {
-  margin-top: 48px;
+  margin-top: 0;
   color: $main-text-color;
   font-family: Poppins, sans-serif;
+  padding-bottom: 24px;
+  display: grid;
+  row-gap: 10px;
 
   &__item {
+    margin: 0;
+
     &--smaller {
       font-size: 14px;
       font-weight: 400;
+      opacity: 0.75;
     }
 
     &--bigger {
       font-size: 16px;
       font-weight: 500;
+      line-height: 1.5;
     }
   }
 }
@@ -108,31 +118,53 @@
 
   &__container {
     display: flex;
+    flex-direction: column;
     justify-content: center; // центрує весь блок
-    align-items: flex-start;
-    gap: 80px;
+    align-items: stretch;
+    gap: 40px;
     margin: 0 auto;
     width: 100%;
+    padding-inline: 8px;
+    box-sizing: border-box;
   }
+
+  .form,
+  .template {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  @include on-phone {
+    .form,
+    .template {
+      max-width: 100%;
+    }
+  }
+
   @include on-tablet {
     &__container {
       display: flex;
-      gap: 24px;
+      flex-direction: row;
+      justify-content: center;
+      gap: 48px;
       align-items: flex-start;
+      padding-inline: 0;
     }
 
     &__container .form {
-      /* Keep original spacing, but prevent flex auto-margins from centering the form */
       margin: 0;
     }
 
     &__container .template {
       margin-top: 0;
+      margin-inline: 0;
     }
   }
 
   @include on-laptop {
     &__container {
+      max-width: 960px;
       gap: 198px;
     }
   }

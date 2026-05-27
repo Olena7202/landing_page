@@ -17,19 +17,23 @@
 
   &__icons {
     display: flex;
-    gap: 32px;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 32px;
+    }
   }
 
   &__logo {
     display: flex;
-    width: 130px;
-    height: 38px;
+    width: 110px;
+    height: 32px;
 
     @include hover(transform, scale(1.2));
 
     @include on-phone {
-      width: 130px;
-      height: 38px;
+      width: 110px;
+      height: 32px;
     }
 
     @include on-tablet {

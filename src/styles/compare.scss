@@ -2,14 +2,18 @@
   &__products {
     @include page-grid;
 
-    row-gap: 40px;
+    row-gap: 48px;
   }
 
   &__product {
     grid-column: 1 / -1;
+    max-width: 420px;
+    margin-inline: auto;
 
     @include on-laptop {
       grid-column: span 4;
+      max-width: none;
+      margin-inline: 0;
     }
   }
 }

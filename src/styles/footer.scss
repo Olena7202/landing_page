@@ -1,12 +1,16 @@
 .footer {
-  height: 90vh;
+  height: 35vh;
   background-image: url(../image/footer.png);
   background-size: cover;
   background-position: center;
 
-  @include on-phone {
+  @include on-tablet {
     height: 50vh;
     background-size: cover;
     background-position: center;
+  }
+
+  @include on-laptop {
+    height: 90vh;
   }
 }

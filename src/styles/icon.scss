@@ -33,7 +33,7 @@
   }
 
   &--phone {
-    background-image: url(../image/Icon-Phone-call.png);
+    background-image: url(../image/Icon-Phone-call.svg);
     text-decoration: none;
     display: block;
     white-space: nowrap;
@@ -60,14 +60,14 @@
   }
 
   &--menu {
-    background-image: url(../image/Icon-Burger-menu.png);
+    background-image: url(../image/Icon-Burger-menu.svg);
 
     &:hover {
-      background-image: url(../image/Icon-Burger-menu-hover.png);
+      background-image: url(../image/Icon-Burger-menu-hover.svg);
     }
   }
 
   &--close {
-    background-image: url(../image/Close.png);
+    background-image: url(../image/Close.svg);
   }
 }

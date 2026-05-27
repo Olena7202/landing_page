@@ -3,16 +3,26 @@
 
   &__photo {
     width: 100%;
+    border-radius: 8px;
   }
 
   &__title,
   &__price {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
+
+    @include on-tablet {
+      font-size: 24px;
+    }
   }
 
   &__category {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.5;
     font-weight: 400;
+
+    @include on-tablet {
+      font-size: 16px;
+    }
   }
 }

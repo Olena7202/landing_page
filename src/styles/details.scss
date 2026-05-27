@@ -12,15 +12,20 @@
 .detail__photos {
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
   margin-bottom: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
 }
 
 .detail__photo {
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
@@ -29,33 +34,47 @@
 .detail__link {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
 
   &:hover .detail__photo {
     transform: scale(1.05);
     transition: transform 0.3s ease;
   }
+
+  @include on-tablet {
+    aspect-ratio: auto;
+  }
 }
 
 .detail__link--wide {
-  grid-column: span 4;
+  grid-column: span 1;
   overflow: hidden;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
 }
 
 .detail__link--square {
-  grid-column: span 2;
+  grid-column: span 1;
   overflow: hidden;
+
+  @include on-tablet {
+    grid-column: span 2;
+  }
 }
 
 .details__button {
   display: flex;
   margin-top: 40px;
   justify-content: center;
-  margin-bottom: 70px;
+  margin-bottom: 0;
   overflow: hidden;
 }
 
 .details__button--item {
-  width: 278px;
+  width: 100%;
+  max-width: 278px;
   height: 56px;
   tab-size: 16px;
   font-weight: 700;
@@ -69,11 +88,11 @@
   }
 
   @include on-tablet {
-    width: 392px;
+    max-width: 392px;
   }
 
   @include on-laptop {
-    width: 324px;
+    max-width: 324px;
   }
 }
 
