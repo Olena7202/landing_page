@@ -11,6 +11,8 @@
   }
 
   @include on-laptop {
-    height: 90vh;
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
   }
 }

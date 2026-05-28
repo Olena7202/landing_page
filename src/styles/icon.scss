@@ -26,14 +26,15 @@
     white-space: nowrap;
     padding: 10px 20px;
     cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
     transition:
-      opacity 0.5s,
-      transform 0.5s,
-      opacity 0.5s 0.5s;
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   &--phone {
-    background-image: url(../image/Icon-Phone-call.svg);
+    background-image: url(../image/Icon-Phone-call.png);
     text-decoration: none;
     display: block;
     white-space: nowrap;
@@ -41,21 +42,12 @@
     align-items: center;
     position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -10px -20px;
-      z-index: 1;
-    }
-
-    &:hover .icon__number {
-      display: block;
-      opacity: 1;
-      transform: translateY(-50%) translateX(-30px);
-    }
-
-    &:active .icon__number {
-      transform: translateY(-50%) translateX(0);
+    @include on-laptop {
+      &:hover .icon__number {
+        display: block;
+        opacity: 1;
+        transform: translateY(-50%) translateX(-12px);
+      }
     }
   }
 
